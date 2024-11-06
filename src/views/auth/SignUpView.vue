@@ -7,7 +7,7 @@
       <div class="p-6">
         <h1 class="text-2xl font-bold">Bennasser</h1>
       </div>
-      <div class="mt-24 place-items-center">
+      <div class="mt-32 place-items-center">
         <h1 class="text-xl font-semibold">Login</h1>
         <p class="mt-1 md:text-sm text-xs text-gray-500">
           Make your house a home with our reliable home goods
@@ -15,19 +15,24 @@
       </div>
       <form class="mt-8 place-items-center w-full">
         <!-- //first name -->
-        <div class="flex gap-x-2">
-          <input
-            type="text"
-            id="firstname"
-            placeholder="Firstname"
-            class="mt-4 p-2 border border-greyColor md:w-[196px] w-[300px] text-xs"
-          />
-          <input
-            type="text"
-            id="lastname"
-            placeholder="Lastname"
-            class="mt-4 p-2 border border-greyColor md:w-[196px] w-[300px] text-xs"
-          />
+        <div class="md:flex md:gap-x-2">
+          <div>
+            <input
+              type="text"
+              id="firstname"
+              placeholder="Firstname"
+              class="mt-4 p-2 border border-greyColor md:w-[196px] w-[300px] text-xs"
+            />
+          </div>
+
+          <div>
+            <input
+              type="text"
+              id="lastname"
+              placeholder="Lastname"
+              class="mt-4 p-2 border border-greyColor md:w-[196px] w-[300px] text-xs"
+            />
+          </div>
         </div>
         <div>
           <input

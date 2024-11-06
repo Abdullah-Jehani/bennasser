@@ -7,7 +7,7 @@
       <div class="p-6">
         <h1 class="text-2xl font-bold">Bennasser</h1>
       </div>
-      <div class="mt-24 place-items-center">
+      <div class="mt-32 place-items-center">
         <h1 class="text-xl font-semibold">Login</h1>
         <p class="mt-1 md:text-sm text-xs text-gray-500">
           Make your house a home with our reliable home goods
