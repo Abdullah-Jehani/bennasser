@@ -14,16 +14,41 @@
         </p>
       </div>
       <form class="mt-8 place-items-center w-full">
-        <div>
+        <!-- //first name -->
+        <div class="flex gap-x-2">
           <input
             type="text"
-            placeholder="Username"
+            id="firstname"
+            placeholder="Firstname"
+            class="mt-4 p-2 border border-greyColor md:w-[196px] w-[300px] text-xs"
+          />
+          <input
+            type="text"
+            id="lastname"
+            placeholder="Lastname"
+            class="mt-4 p-2 border border-greyColor md:w-[196px] w-[300px] text-xs"
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            class="mt-4 p-2 border border-greyColor md:w-[400px] w-[300px] text-xs"
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            id="phone"
+            placeholder="Phone Number"
             class="mt-4 p-2 border border-greyColor md:w-[400px] w-[300px] text-xs"
           />
         </div>
         <div>
           <input
             type="password"
+            id="password"
             placeholder="Password"
             class="mt-4 p-2 border border-greyColor md:w-[400px] w-[300px] text-xs"
           />
@@ -32,7 +57,7 @@
           <button
             class="mt-4 bg-blackColor hover:bg-black text-white p-2 md:rounded-[2px] rounded text-xs md:w-[400px] w-[300px]"
           >
-            Login
+            Sign Up
           </button>
         </div>
       </form>
@@ -41,8 +66,8 @@
           Don’t Have an Account Yet?
           <span
             class="text-black underline cursor-pointer"
-            @click="$router.push('/signup')"
-            >Sign Up</span
+            @click="$router.push('/login')"
+            >Login</span
           >
         </p>
       </div>
@@ -51,7 +76,7 @@
     <!-- Image Section -->
     <div class="hidden md:col-start-9 md:col-span-4 md:block h-full">
       <img
-        src="../../assets/images/slider-col-01 1.svg"
+        src="../../assets/images/ea00af45b587be3deb453e9ced0684c8 1.svg"
         alt="Slider Image"
         class="w-full h-full object-cover"
       />
