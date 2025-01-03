@@ -1,22 +1,22 @@
 <template>
-  <div class="relative bg-neutral-900">
+  <div class="relative bg-neutral-900 h-screen md:h-fit">
     <img
       class="blur-sm drop-shadow-2xl object-cover w-full h-full"
       src="../../../public/images/Discover.png"
       alt="Discover Background"
     />
     <div
-      class="absolute inset-0 flex justify-center items-center text-white text-4xl font-bold space-x-40"
+      class="absolute inset-0 flex flex-col md:flex-row justify-center items-center text-white text-4xl font-bold md:space-x-40 space-x-0 space-y-8 md:space-y-0"
     >
       <!-- Image 1 -->
       <div class="relative group">
         <img
-          class="object-cover"
+          class="object-cover h-52 md:h-full w-32 md:w-full"
           src="../../../public/images/porcalen.png"
           alt="Porcelain"
         />
         <div
-          class="absolute inset-0 flex justify-center items-center text-white font-bold text-5xl bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          class="absolute inset-0 flex justify-center items-center text-white font-bold md:text-5xl text-3xl bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
           style="writing-mode: vertical-rl; text-orientation: sideways-right"
         >
           Porcelain
@@ -26,12 +26,12 @@
       <!-- Image 2 -->
       <div class="relative group">
         <img
-          class="object-cover"
+          class="object-cover h-52 md:h-full w-32 md:w-full"
           src="../../../public/images/ceramic.png"
           alt="Ceramic"
         />
         <div
-          class="absolute inset-0 flex justify-center items-center text-white font-bold text-5xl bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          class="absolute inset-0 flex justify-center items-center text-white font-bold md:text-5xl text-3xl bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
           style="writing-mode: vertical-rl; text-orientation: sideways-right"
         >
           Ceramic
@@ -41,12 +41,12 @@
       <!-- Image 3 -->
       <div class="relative group">
         <img
-          class="object-cover"
+          class="object-cover h-52 md:h-full w-32 md:w-full"
           src="../../../public/images/parke.png"
           alt="Parke"
         />
         <div
-          class="absolute inset-0 flex justify-center items-center text-white font-bold text-5xl bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          class="absolute inset-0 flex justify-center items-center text-white font-bold md:text-5xl text-3xl bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
           style="writing-mode: vertical-rl; text-orientation: sideways-right"
         >
           Parke

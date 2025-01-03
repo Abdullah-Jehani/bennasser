@@ -2,7 +2,7 @@
   <div>
     <HeroSectionComponent />
   </div>
-  <div>
+  <div class="h-screen">
     <DiscoverComponent />
   </div>
 </template>
