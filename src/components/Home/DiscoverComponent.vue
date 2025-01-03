@@ -11,7 +11,7 @@
       <!-- Image 1 -->
       <div class="relative group">
         <img
-          class="object-cover h-52 md:h-full w-32 md:w-full"
+          class="object-cover h-44 md:h-full w-28 md:w-full"
           src="../../../public/images/porcalen.png"
           alt="Porcelain"
         />
@@ -26,7 +26,7 @@
       <!-- Image 2 -->
       <div class="relative group">
         <img
-          class="object-cover h-52 md:h-full w-32 md:w-full"
+          class="object-cover h-44 md:h-full w-28 md:w-full"
           src="../../../public/images/ceramic.png"
           alt="Ceramic"
         />
@@ -41,7 +41,7 @@
       <!-- Image 3 -->
       <div class="relative group">
         <img
-          class="object-cover h-52 md:h-full w-32 md:w-full"
+          class="object-cover h-44 md:h-full w-28 md:w-full"
           src="../../../public/images/parke.png"
           alt="Parke"
         />
