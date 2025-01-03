@@ -29,7 +29,6 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about-us">About Us</router-link>
       <router-link to="/categories">Categories</router-link>
-      <router-link to="/contact">Contact</router-link>
     </div>
 
     <!-- Join Us Button for Medium Screens and Up -->
@@ -54,7 +53,7 @@
       <router-link to="/categories" class="hover:font-bold"
         >Categories</router-link
       >
-      <router-link to="/contact" class="hover:font-bold">Contact</router-link>
+
       <div
         class="col-start-1 col-span-full place-self-center place-content-center place-items-center md:hidden block"
         @click="$router.push('/signup')"

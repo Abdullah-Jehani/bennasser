@@ -24,7 +24,6 @@
       <router-link to="/">Home</router-link>
       <router-link to="/About-us">About Us</router-link>
       <router-link to="/categories">Categories</router-link>
-      <router-link to="/contact">Contact</router-link>
     </div>
     <div
       class="border-b border-lightGray w-full col-start-1 col-span-full mt-12"
