@@ -5,7 +5,11 @@
       class="md:col-start-1 md:col-span-8 col-span-full bg-white w-full h-full overflow-auto"
     >
       <div class="p-6">
-        <h1 class="text-2xl font-bold">Bennasser</h1>
+        <img
+          @click="$router.push('/')"
+          src="../../../public/logos/BenNasser2.svg"
+          alt=""
+        />
       </div>
       <div class="mt-32 place-items-center">
         <h1 class="text-xl font-semibold">Login</h1>
@@ -51,7 +55,7 @@
     <!-- Image Section -->
     <div class="hidden md:col-start-9 md:col-span-4 md:block h-full">
       <img
-        src="../../assets/images/slider-col-01 1.svg"
+        src="../../../public/images/slider-col-01 1.png"
         alt="Slider Image"
         class="w-full h-full object-cover"
       />

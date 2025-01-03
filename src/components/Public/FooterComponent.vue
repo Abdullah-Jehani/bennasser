@@ -21,10 +21,10 @@
     <div
       class="md:col-start-7 col-start-1 md:col-span-5 col-span-full flex justify-center items-end space-x-6 mt-16 md:mt-12 md:text-lg text-base font-medium"
     >
-      <h1>Home</h1>
-      <h1>About Us</h1>
-      <h1>Categories</h1>
-      <h1>Contact</h1>
+      <router-link to="/">Home</router-link>
+      <router-link to="/About-us">About Us</router-link>
+      <router-link to="/categories">Categories</router-link>
+      <router-link to="/contact">Contact</router-link>
     </div>
     <div
       class="border-b border-lightGray w-full col-start-1 col-span-full mt-12"
