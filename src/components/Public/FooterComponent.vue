@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-12 w-full md:px-[120px] px-8 md:pt-48 md:pb-12 pb-0 pt-0 my-12 md:my-0"
+    class="grid grid-cols-12 w-full md:px-[120px] px-8 md:pb-12 pb-0 pt-0 my-12 md:my-0"
   >
     <div class="col-start-1 md:col-span-4 col-span-full">
       <img src="../../../public/logos/BenNasser2.svg" alt="" />
