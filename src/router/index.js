@@ -9,6 +9,7 @@ import DetailsView from "../views/Details/DetailsView.vue";
 import CartView from "../views/Cart/CartView.vue";
 import CheckoutView from "../views/Checkout/CheckoutView.vue";
 import OrdersView from "../views/Orders/OrdersView.vue";
+import OrderDetailsView from "../views/Orders/OrderDetailsView.vue";
 
 const routes = [
   {
@@ -60,6 +61,11 @@ const routes = [
     path: "/Orders",
     name: "OrdersView",
     component: OrdersView,
+  },
+  {
+    path: "/Orders/:id",
+    name: "OrderDetailsView",
+    component: OrderDetailsView,
   },
 ];
 

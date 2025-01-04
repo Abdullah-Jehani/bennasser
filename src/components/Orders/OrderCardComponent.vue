@@ -8,7 +8,9 @@
         </p>
       </div>
       <div>
-        <ButtonComponent>View Order</ButtonComponent>
+        <ButtonComponent @click="$router.push(`/orders/${id}`)"
+          >View Order</ButtonComponent
+        >
       </div>
     </div>
   </div>
@@ -20,5 +22,6 @@ const props = defineProps({
   title: String,
   name: String,
   location: String,
+  id: Number,
 });
 </script>

@@ -18,6 +18,7 @@
       :title="order.title"
       :name="order.name"
       :location="order.location"
+      :id="order.id"
     />
   </div>
 </template>
