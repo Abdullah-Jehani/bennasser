@@ -34,9 +34,18 @@
     <!-- Join Us Button for Medium Screens and Up -->
     <div
       class="col-start-12 col-span-full place-self-center place-content-center place-items-center hidden md:block"
+      v-if="!isAuthenticated"
       @click="$router.push('/signup')"
     >
       <ButtonComponent>JOIN US</ButtonComponent>
+    </div>
+
+    <div
+      class="col-start-11 col-span-full hidden md:block place-self-center place-content-center place-items-center"
+      v-if="isAuthenticated"
+      @click="$router.push('/cart')"
+    >
+      <ButtonComponent4 />
     </div>
 
     <!-- Navigation Links Dropdown for Small Screens -->
@@ -53,13 +62,6 @@
       <router-link to="/categories" class="hover:font-bold"
         >Categories</router-link
       >
-
-      <div
-        class="col-start-1 col-span-full place-self-center place-content-center place-items-center md:hidden block"
-        @click="$router.push('/signup')"
-      >
-        <ButtonComponent3>JOIN US</ButtonComponent3>
-      </div>
     </div>
   </div>
 </template>
@@ -68,7 +70,9 @@
 import { ref } from "vue";
 import ButtonComponent from "../Helper/ButtonComponent.vue";
 import ButtonComponent3 from "../Helper/ButtonComponent3.vue";
+import ButtonComponent4 from "../Helper/ButtonComponent4.vue";
 import router from "../../router";
+const isAuthenticated = ref(true);
 
 // State to toggle menu visibility
 const isMenuOpen = ref(false);

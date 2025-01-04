@@ -6,6 +6,9 @@ import AboutUsView from "../views/AboutUs/AboutUsView.vue";
 import CategoriesView from "../views/Categories/CategoriesView.vue";
 import ContactView from "../views/Contact/ContactView.vue";
 import DetailsView from "../views/Details/DetailsView.vue";
+import CartView from "../views/Cart/CartView.vue";
+import CheckoutView from "../views/Checkout/CheckoutView.vue";
+import OrdersView from "../views/Orders/OrdersView.vue";
 
 const routes = [
   {
@@ -42,6 +45,21 @@ const routes = [
     path: "/Products/:id",
     name: "DetailsView",
     component: DetailsView,
+  },
+  {
+    path: "/Cart",
+    name: "CartView",
+    component: CartView,
+  },
+  {
+    path: "/Checkout",
+    name: "CheckoutView",
+    component: CheckoutView,
+  },
+  {
+    path: "/Orders",
+    name: "OrdersView",
+    component: OrdersView,
   },
 ];
 

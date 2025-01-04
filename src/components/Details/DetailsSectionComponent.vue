@@ -37,13 +37,28 @@
         </button>
       </div>
       <div class="flex justify-center items-center mt-12 space-x-4">
-        <SelectionButtonComponent class="bg-lightGrey"
-          >Place Order</SelectionButtonComponent
+        <SelectionButtonComponent
+          @click="router.push('/checkout')"
+          class="bg-lightGrey cursor-pointer"
         >
-        <SelectionButtonComponent class="bg-black text-white"
-          >Place Order</SelectionButtonComponent
+          Place Order
+        </SelectionButtonComponent>
+        <SelectionButtonComponent
+          class="bg-black text-white cursor-pointer"
+          @click="addToCart"
         >
+          Add To Cart
+        </SelectionButtonComponent>
       </div>
+
+      <!-- Notification -->
+      <div
+        v-if="showNotification"
+        class="fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-2 bg-green-500 text-white rounded shadow"
+      >
+        Item has been added to the cart!
+      </div>
+
       <div class="border-t border-lightGrey mt-12 md:mt-36"></div>
       <div class="font-extralight text-sm mt-4 leading-normal">
         <p>
@@ -51,7 +66,7 @@
           blends traditional artistry with modern functionality. Known for its
           intricate designs, vibrant colors, and durable craftsmanship, this
           sink is typically made from high-quality ceramic. It often features
-          hand-painted patterns inspired by Spanish culture,
+          hand-painted patterns inspired by Spanish culture.
         </p>
       </div>
     </div>
@@ -61,6 +76,8 @@
 <script setup>
 import { ref, computed } from "vue";
 import SelectionButtonComponent from "../Helper/SelectionButtonComponent.vue";
+import { useCartStore } from "../../Stores/cartStore";
+import router from "../../router";
 
 // Product Price
 const basePrice = 57.78;
@@ -80,5 +97,30 @@ const decreaseQuantity = () => {
   if (quantity.value > 1) {
     quantity.value--;
   }
+};
+
+// Add to Cart Function
+const cartStore = useCartStore();
+const showNotification = ref(false); // For showing the notification
+const addToCart = async () => {
+  // Add product to cart
+  cartStore.addProduct({
+    id: 1, // Example product ID
+    name: "Spanish Ceramic Sink Black",
+    price: basePrice,
+    quantity: quantity.value,
+    totalPrice: parseFloat(totalPrice.value),
+  });
+
+  // Show notification
+  showNotification.value = true;
+
+  // Hide notification after 1.2 seconds
+  setTimeout(() => {
+    showNotification.value = false;
+  }, 1200);
+
+  // Navigate to the cart page
+  await router.push("/cart");
 };
 </script>

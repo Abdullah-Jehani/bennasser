@@ -3,7 +3,8 @@
     <navBarComponent
       v-if="
         router.currentRoute.value.path !== '/signup' &&
-        router.currentRoute.value.path !== '/login'
+        router.currentRoute.value.path !== '/login' &&
+        router.currentRoute.value.path !== '/orders'
       "
     />
   </header>
@@ -15,7 +16,9 @@
       :class="router.currentRoute.value.path === '/' ? 'pt-48' : ''"
       v-if="
         router.currentRoute.value.path !== '/signup' &&
-        router.currentRoute.value.path !== '/login'
+        router.currentRoute.value.path !== '/login' &&
+        router.currentRoute.value.path !== '/cart' &&
+        router.currentRoute.value.path !== '/orders'
       "
     />
   </footer>
