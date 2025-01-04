@@ -14,6 +14,7 @@ module.exports = {
         searchBar: "#F9F9F9",
         greenColor: "#249238",
         redColor: "#C50609",
+        lightGrey: "#F5F5F5",
       },
     },
   },

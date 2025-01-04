@@ -12,7 +12,11 @@
         </h1>
       </div>
       <div>
-        <ButtonComponent class="text-sm px-2">View Product</ButtonComponent>
+        <ButtonComponent
+          @click="$router.push(`/products/${id}`)"
+          class="text-sm px-2"
+          >View Product</ButtonComponent
+        >
       </div>
     </div>
     <div class="mt-4 p-4">
@@ -33,5 +37,6 @@ const props = defineProps({
     default: true,
   },
   description: String,
+  id: Number,
 });
 </script>
