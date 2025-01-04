@@ -10,6 +10,9 @@ import CartView from "../views/Cart/CartView.vue";
 import CheckoutView from "../views/Checkout/CheckoutView.vue";
 import OrdersView from "../views/Orders/OrdersView.vue";
 import OrderDetailsView from "../views/Orders/OrderDetailsView.vue";
+import AdminView from "../views/Admin/AdminView.vue";
+import EditView from "../views/Admin/EditView.vue";
+import AddProductView from "../views/Admin/AddProductView.vue";
 
 const routes = [
   {
@@ -66,6 +69,21 @@ const routes = [
     path: "/Orders/:id",
     name: "OrderDetailsView",
     component: OrderDetailsView,
+  },
+  {
+    path: "/Admin",
+    name: "AdminView",
+    component: AdminView,
+  },
+  {
+    path: "/Admin/:id/edit",
+    name: "EditView",
+    component: EditView,
+  },
+  {
+    path: "/Admin/add",
+    name: "AddProduct",
+    component: AddProductView,
   },
 ];
 

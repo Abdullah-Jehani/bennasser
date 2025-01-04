@@ -2,7 +2,7 @@
   <div class="grid grid-cols-12 w-full gap-4 md:h-screen">
     <!-- Product Image Section -->
     <div
-      class="col-start-1 md:col-span-5 col-span-full mt-12 md:mt-0 md:bg-lightGrey bg-transparent flex justify-center items-center"
+      class="col-start-1 md:col-span-5 col-span-full mt-4 md:mt-0 md:bg-lightGrey bg-transparent flex justify-center items-center"
     >
       <img src="../../../public/images/porcalen1.png" alt="Product Image" />
     </div>
@@ -22,27 +22,33 @@
         Quantity: <span class="font-semibold">{{ quantity }} m2</span>
       </p>
 
-      <!-- Quantity Selector -->
-
+      <!-- Buttons for Approve and Decline -->
       <div class="flex justify-center items-center mt-12 space-x-4">
         <SelectionButtonComponent
-          @click="router.push('/checkout')"
+          @click="approveOrder"
           class="bg-greenColor text-white cursor-pointer"
         >
           Approve
         </SelectionButtonComponent>
         <SelectionButtonComponent
+          @click="declineOrder"
           class="bg-redColor text-white cursor-pointer"
-          @click="addToCart"
         >
           Declined
         </SelectionButtonComponent>
       </div>
 
-      <!-- Notification -->
+      <!-- Notification Message -->
+      <div
+        v-if="notification.message"
+        :class="notification.class"
+        class="mt-4 p-4 rounded"
+      >
+        {{ notification.message }}
+      </div>
 
       <div class="border-t border-lightGrey mt-12 md:mt-36"></div>
-      <div class="font-extralight text-sm mt-4 leading-normal">
+      <div class="font-extralight text-sm mt-4 leading-normal mb-4">
         <p>
           A Spanish ceramic sink is a beautifully handcrafted fixture that
           blends traditional artistry with modern functionality. Known for its
@@ -58,19 +64,58 @@
 <script setup>
 import { ref, computed } from "vue";
 import SelectionButtonComponent from "../Helper/SelectionButtonComponent.vue";
-import { useCartStore } from "../../Stores/cartStore";
 import router from "../../router";
 
-// Product Price
+// Product Information
 const basePrice = 57.78;
 const Date = ref("22-12-2024");
 const Company = ref("Ben Nasser Company");
 const title = ref("Porcelain Sink");
-// Reactive State for Quantity
 const quantity = ref(24);
 
-// Compute Total Price
+// Computed Total Price
 const totalPrice = computed(() => (basePrice * quantity.value).toFixed(2));
 
-// Add to Cart Function
+// Notification State
+const notification = ref({
+  message: "",
+  class: "",
+});
+
+// Approve Order Function
+const approveOrder = () => {
+  notification.value.message = "Order approved successfully!";
+  notification.value.class = "bg-green-100 text-green-800";
+
+  setTimeout(() => {
+    router.push("/orders");
+  }, 2000);
+};
+
+// Decline Order Function
+const declineOrder = () => {
+  notification.value.message = "Order declined.";
+  notification.value.class = "bg-red-100 text-red-800";
+  setTimeout(() => {
+    router.push("/orders");
+  }, 2000);
+};
 </script>
+
+<style scoped>
+.bg-green-100 {
+  background-color: #d4edda;
+}
+
+.text-green-800 {
+  color: #155724;
+}
+
+.bg-red-100 {
+  background-color: #f8d7da;
+}
+
+.text-red-800 {
+  color: #721c24;
+}
+</style>
