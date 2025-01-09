@@ -17,13 +17,16 @@
       <h1 class="text-4xl font-semibold mb-2">{{ title }}</h1>
       <p class="text-lg font-light text-blackColor mb-4">By {{ Company }}</p>
       <h1 class="text-4xl font-semibold">{{ totalPrice }} LYD</h1>
-      <p class="text-xs font-light">{{ Date }}</p>
+      <p class="text-xs font-medium mt-2">{{ Date }}</p>
       <p class="mt-8 text-lg font-medium">
         Quantity: <span class="font-semibold">{{ quantity }} m2</span>
       </p>
 
       <!-- Buttons for Approve and Decline -->
-      <div class="flex justify-center items-center mt-12 space-x-4">
+      <div
+        v-if="!isApproved"
+        class="flex justify-center items-center mt-12 space-x-4"
+      >
         <SelectionButtonComponent
           @click="approveOrder"
           class="bg-greenColor text-white cursor-pointer"
@@ -34,7 +37,31 @@
           @click="declineOrder"
           class="bg-redColor text-white cursor-pointer"
         >
-          Declined
+          Decline
+        </SelectionButtonComponent>
+      </div>
+
+      <!-- Order Status Dropdown -->
+      <div v-if="isApproved" class="mt-6">
+        <label for="status" class="block text-lg font-medium mb-2">
+          Update Order Status:
+        </label>
+        <select
+          id="status"
+          v-model="selectedStatus"
+          class="border border-lightGrey rounded px-4 py-2"
+        >
+          <option value="Processing">Processing</option>
+          <option value="Packaging">Packaging</option>
+          <option value="Delivering">Delivering</option>
+        </select>
+
+        <!-- Confirm Status Button -->
+        <SelectionButtonComponent
+          @click="confirmStatus"
+          class="mt-4 bg-black w-fit text-white cursor-pointer"
+        >
+          Confirm Status
         </SelectionButtonComponent>
       </div>
 
@@ -48,7 +75,7 @@
       </div>
 
       <div class="border-t border-lightGrey mt-12 md:mt-36"></div>
-      <div class="font-extralight text-sm mt-4 leading-normal mb-4">
+      <div class="font-light text-sm mt-4 leading-normal mb-4">
         <p>
           A Spanish ceramic sink is a beautifully handcrafted fixture that
           blends traditional artistry with modern functionality. Known for its
@@ -68,7 +95,7 @@ import router from "../../router";
 
 // Product Information
 const basePrice = 57.78;
-const Date = ref("22-12-2024");
+const Date = ref("22 january 2024");
 const Company = ref("Ben Nasser Company");
 const title = ref("Porcelain Sink");
 const quantity = ref(24);
@@ -82,23 +109,37 @@ const notification = ref({
   class: "",
 });
 
+// Order Status State
+const isApproved = ref(false);
+const selectedStatus = ref("Processing");
+
 // Approve Order Function
 const approveOrder = () => {
+  isApproved.value = true;
   notification.value.message = "Order approved successfully!";
   notification.value.class = "bg-green-100 text-green-800";
-
-  setTimeout(() => {
-    router.push("/orders");
-  }, 2000);
 };
 
 // Decline Order Function
 const declineOrder = () => {
+  isApproved.value = false;
   notification.value.message = "Order declined.";
   notification.value.class = "bg-red-100 text-red-800";
   setTimeout(() => {
     router.push("/orders");
   }, 2000);
+};
+
+// Confirm Status Function
+const confirmStatus = () => {
+  notification.value.message = `Order status confirmed: ${selectedStatus.value}`;
+  notification.value.class = "bg-blue-100 text-blue-800";
+  setTimeout(() => {
+    router.push("/orders");
+  }, 1000);
+  setTimeout(() => {
+    window.location.reload();
+  }, 1200);
 };
 </script>
 
@@ -117,5 +158,13 @@ const declineOrder = () => {
 
 .text-red-800 {
   color: #721c24;
+}
+
+.bg-blue-100 {
+  background-color: #cce5ff;
+}
+
+.text-blue-800 {
+  color: #004085;
 }
 </style>

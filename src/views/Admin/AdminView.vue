@@ -12,7 +12,7 @@
     <h1>Products</h1>
     <ButtonComponent
       @click="$router.push(`/admin/add`)"
-      class="bg-white border border-black text-neutral-900"
+      class="border border-white hover:bg-blue-500 cursor-pointer bg-blue-400 text-blackColor"
       >Add Product</ButtonComponent
     >
   </div>

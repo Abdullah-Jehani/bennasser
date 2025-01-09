@@ -57,7 +57,9 @@
     <div
       class="text-center absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-12"
     >
-      <ButtonComponent2>See Our Products</ButtonComponent2>
+      <ButtonComponent2 @click="$router.push('/categories')"
+        >See Our Products</ButtonComponent2
+      >
     </div>
   </div>
 </template>

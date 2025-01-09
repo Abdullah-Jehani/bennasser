@@ -29,9 +29,8 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about-us">About Us</router-link>
       <router-link to="/categories">Categories</router-link>
+      <router-link to="/MyOrders">My Orders</router-link>
     </div>
-
-    <!-- Join Us Button for Medium Screens and Up -->
     <div
       class="col-start-12 col-span-full place-self-center place-content-center place-items-center hidden md:block"
       v-if="!isAuthenticated"

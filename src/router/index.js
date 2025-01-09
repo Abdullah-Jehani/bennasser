@@ -12,6 +12,8 @@ import OrderDetailsView from "../views/Orders/OrderDetailsView.vue";
 import AdminView from "../views/Admin/AdminView.vue";
 import EditView from "../views/Admin/EditView.vue";
 import AddProductView from "../views/Admin/AddProductView.vue";
+import MyOrdersView from "../views/MyOrders/MyOrdersView.vue";
+import MyOrderDetailsView from "../views/MyOrders/MyOrderDetailsView.vue";
 
 const routes = [
   {
@@ -79,6 +81,16 @@ const routes = [
     path: "/Admin/add",
     name: "AddProduct",
     component: AddProductView,
+  },
+  {
+    path: "/MyOrders",
+    name: "MyOrders",
+    component: MyOrdersView,
+  },
+  {
+    path: "/MyOrders/:id",
+    name: "MyOrdersDetails",
+    component: MyOrderDetailsView,
   },
 ];
 

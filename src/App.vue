@@ -15,7 +15,15 @@
   </main>
   <footer>
     <FooterComponent
-      :class="router.currentRoute.value.path === '/' ? 'pt-48' : ''"
+      :class="
+        router.currentRoute.value.path === '/' ||
+        router.currentRoute.value.path === '/about-us' ||
+        router.currentRoute.value.path === '/categories' ||
+        router.currentRoute.value.path.startsWith('/products/') ||
+        router.currentRoute.value.path.startsWith('/MyOrders')
+          ? 'pt-48'
+          : 'absolute bottom-0'
+      "
       v-if="
         !['/signup', '/login', '/cart', '/admin'].includes(
           router.currentRoute.value.path

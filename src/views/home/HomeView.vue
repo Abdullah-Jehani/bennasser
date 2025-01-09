@@ -5,7 +5,7 @@
   <div class="h-screen">
     <DiscoverComponent />
   </div>
-  <div class="h- mt-72 px-8 md:px-[120px]">
+  <div class="h- mt-96 px-8 md:px-[120px]">
     <ContactUsComponent />
   </div>
 </template>
