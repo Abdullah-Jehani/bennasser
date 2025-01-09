@@ -4,7 +4,6 @@ import LoginView from "../views/auth/LoginView.vue";
 import SignUpView from "../views/auth/SignUpView.vue";
 import AboutUsView from "../views/AboutUs/AboutUsView.vue";
 import CategoriesView from "../views/Categories/CategoriesView.vue";
-import ContactView from "../views/Contact/ContactView.vue";
 import DetailsView from "../views/Details/DetailsView.vue";
 import CartView from "../views/Cart/CartView.vue";
 import CheckoutView from "../views/Checkout/CheckoutView.vue";
@@ -40,11 +39,7 @@ const routes = [
     name: "CategoriesView",
     component: CategoriesView,
   },
-  {
-    path: "/Contact",
-    name: "ContactView",
-    component: ContactView,
-  },
+
   {
     path: "/Products/:id",
     name: "DetailsView",

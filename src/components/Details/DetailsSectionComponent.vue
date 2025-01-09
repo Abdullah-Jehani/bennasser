@@ -38,12 +38,6 @@
       </div>
       <div class="flex justify-center items-center mt-12 space-x-4">
         <SelectionButtonComponent
-          @click="router.push('/checkout')"
-          class="bg-lightGrey cursor-pointer"
-        >
-          Place Order
-        </SelectionButtonComponent>
-        <SelectionButtonComponent
           class="bg-black text-white cursor-pointer"
           @click="addToCart"
         >

@@ -1,16 +1,24 @@
 <template>
   <div class="grid grid-cols-12 w-full mt-4">
-    <SearchBarComponent class="col-start-1 col-span-full md:px-[120px] px-8" />
+    <SearchBarComponent
+      class="col-start-1 col-span-full md:px-[120px] px-8"
+      @update-search="handleSearch"
+    />
   </div>
   <div class="grid grid-cols-12 w-full mt-12 mb-24 md:px-[120px] px-8">
-    <ProductsComponent :products="products" class="col-start-1 col-span-full" />
+    <ProductsComponent
+      :products="filteredProducts"
+      class="col-start-1 col-span-full"
+    />
   </div>
 </template>
 
 <script setup>
+import { ref, computed } from "vue";
 import SearchBarComponent from "../../components/Categories/SearchBarComponent.vue";
 import ProductsComponent from "../../components/Categories/ProductsComponent.vue";
-const products = [
+
+const products = ref([
   {
     id: 1,
     image: "https://via.placeholder.com/150",
@@ -46,5 +54,17 @@ const products = [
     inStock: true,
     description: "This is the description of Product 5.",
   },
-];
+]);
+
+const searchQuery = ref("");
+
+const filteredProducts = computed(() =>
+  products.value.filter((product) =>
+    product.title.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
+
+function handleSearch(query) {
+  searchQuery.value = query;
+}
 </script>

@@ -9,12 +9,23 @@
         name="Search"
         id="Search"
         placeholder="Search By Product Name"
+        @input="updateSearch($event.target.value)"
       />
       <span
         class="absolute left-4 top-1/2 transform -translate-y-1/2 text-blackColor"
       >
-        <img src="../../../public/icons/Search.svg" alt="" />
+        <img src="../../../public/icons/Search.svg" alt="Search Icon" />
       </span>
     </div>
   </div>
 </template>
+
+<script setup>
+import { defineEmits } from "vue";
+
+const emit = defineEmits(["update-search"]);
+
+function updateSearch(value) {
+  emit("update-search", value);
+}
+</script>
